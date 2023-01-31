@@ -26,9 +26,9 @@ impl Detour {
     // Lock this so OS operations are not performed in parallell
     let mut pool = memory::POOL.lock().unwrap();
 
-    if !util::is_executable_address(target)? || !util::is_executable_address(detour)? {
-      Err(Error::NotExecutable)?;
-    }
+//     if !util::is_executable_address(target)? || !util::is_executable_address(detour)? {
+//       Err(Error::NotExecutable)?;
+//     }
 
     // Create a trampoline generator for the target function
     let margin = arch::meta::prolog_margin(target);
